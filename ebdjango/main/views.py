@@ -92,7 +92,7 @@ def shoppinglist(response):
 		if (ql[i] % 1 == 0):
 			shoppinglist += str(sl[i]) + " x " + str(int(ql[i])) + "\n"
 		else:
-			shoppinglist += str(sl[i]) + " x " + str(ql[i]) + "\n"
+			shoppinglist += str(sl[i]) + " x " + str(round(ql[i],1)) + "\n"
 
 
 	return render(response, "main/shoppinglist.html", {"shoppinglist":shoppinglist})
