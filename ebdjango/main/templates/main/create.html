@@ -3,16 +3,21 @@
 {% block title %}Create Recipe{% endblock %}
 
 {% block content %}
-<h3>Create recipe</h3>
-<form method="post", action="/create/", class="form-group">
-	{% csrf_token %}
-	<div class="input-group mb-3">
-		<div class="input-group-prepend">
-			<button type="submit", name = "save", class="btn btn-success">Create New</button>
-		</div>
-		{{form.name}}
+	<h3>Create recipe</h3>
+	<br>
+	<div class="text-justify">
+		<p><b>Type the name of the new recipe and click the button.</b></p>
 	</div>
-</form>
+	<form method="post", action="/create/", class="form-group">
+		{% csrf_token %}
+		<div class="input-group">
+			<div class="input-group-prepend">
+				{{form.name}}
+			</div>
+		</div>	
+	<br>
+	<button type="submit", name = "save", class="btn btn-success">Create New</button>
+	</form>
 
 
 {% endblock %}

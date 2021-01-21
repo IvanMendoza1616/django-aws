@@ -2,7 +2,23 @@
 {% block title %}Homepage{% endblock %}
 
 {% block content %}
-
 	<h1>Welcome</h1>
+	<div class="text-justify">
+		<p><b>
+		This is a web app designed to create a shopping list from a set of recipes selected.
+		</b></p>
+		<br>
+		<p>
+		The <button class="intro"><a href="/create">Create</a></button> button allows you to create a new recipe by typing the name of the new recipe.
+		</p>
+		<br>
+		<p>
+		The <button class="intro"><a href="/recipes">Recipes</a></button> button displays all the saved recipes and the number of people eating that recipe. By clicking on the name of each recipe, the ingredients and preparation are displayed.
+		</p>
+		<br>
+		<p>
+		The <button class="intro"><a href="/shoppinglist">List</a></button> button displays all the ingredients required for the people you selected in each recipe.
+		</p>
+	</div>
 
 {% endblock %}
