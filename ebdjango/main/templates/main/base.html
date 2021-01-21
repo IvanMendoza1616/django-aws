@@ -2,34 +2,34 @@
 <html>
 <head>
 	<style type="text/css">
-		.sidenav {
+
+		.navbar {
 			height:100%;
-			width:150px;
-			position:fixed;
-			z-index:1;
-			top:0;
-			left:0;
+			width:100%;
 			background-color:#111;
 			overflow-x:hidden;
 			padding-top:20px;
 		}
 
-		.sidenav a{
-			padding:6px 8px 6px 16px;
+		.navbar a{
+			text-align: center;
 			text-decoration: none;
-			font-size: 25px;
 			color: #818181;
 			display: :block;
 		}
 
-		.sidenav a:hover{
+		.navbar a:hover{
 			color:#f1f1f1;
 		}
 
-		.main{
-			margin-left: 160px;
-			padding: 0px 10px;
+		.recipes{
+			align-content: center;
 		}
+
+		.recipes a{
+			text-align: center;
+		}
+
 
 	</style>
 
@@ -37,33 +37,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
 	<title>{% block title %}Default Title{% endblock %}</title>
 </head>
 
 <body>
-	<div class="sidenav">
-		<a href="/">Home</a>
+	<div class="container">
+		<nav class="navbar navbar-expand-lg">
+			<a class="navbar-brand" href="/">Home</a>
 
-		<a href="/create">Create</a>
-		<a href="/recipes">Recipes</a>
-		<a href="/shoppinglist">List</a>
+			<a class="navbar-brand" href="/create">Create</a>
+			<a class="navbar-brand" href="/recipes">Recipes</a>
+			<a class="navbar-brand" href="/shoppinglist">List</a>
 
-	</div>
+		</nav>
+	
 
 	
-	<div id = "content", name = "content", class="main">
-		<div class="row justify-content-center">
-			<div class="col-8">
-				<h1 class="mt-2">My site</h1>
-				<hr class="mt-0 mb-4">
-				{% block content %}
-				{% endblock %}
+		<div id = "content", name = "content", class="main">
+			<div class="row justify-content-center">
+				<div class="col-8">
+					<br>
+					{% block content %}
+					{% endblock %}
+				</div>
 			</div>
 		</div>
 	</div>
-
 
 
 	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

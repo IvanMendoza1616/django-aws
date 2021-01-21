@@ -3,15 +3,22 @@
 
 {% block content %}
 	<h1>Recipes</h1>
+	<br>
+	<br>
 	<form method="post", action="#">
 	{% csrf_token %}
 		{% for recipe in rl %}
-			<div class="input-group">
-				<span class="form-control"><a href="/{{recipe.id}}">{{recipe.name}}</a></span>
-				<div class="input-group-append">
-					<input type="number" value={{recipe.quantity}} name="{{recipe.id}}" class="form-control">
+			<div class="row">
+				<div class="col">
+					<div class="recipes">
+						<a href="/{{recipe.id}}">{{recipe.name}}</a>
+					</div>
+				</div>
+				<div class="col-4">
+					<input type="number" value={{recipe.quantity}} name="{{recipe.id}}", class="form-control">
 				</div>
 			</div>
+			<hr>
 		{% endfor %}
 
 		<br>
