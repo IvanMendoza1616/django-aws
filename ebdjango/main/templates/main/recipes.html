@@ -1,0 +1,25 @@
+{% extends "main/base.html" %}
+{% block title %} View Recipes {% endblock %}
+
+{% block content %}
+	<h1>Recipes</h1>
+	<form method="post", action="#">
+	{% csrf_token %}
+		{% for recipe in rl %}
+			<div class="input-group">
+				<span class="form-control"><a href="/{{recipe.id}}">{{recipe.name}}</a></span>
+				<div class="input-group-append">
+					<input type="number" value={{recipe.quantity}} name="{{recipe.id}}" class="form-control">
+				</div>
+			</div>
+		{% endfor %}
+
+		<br>
+		<div class="row">
+			<div class="col-sm-12 text-center">
+				<button type="submit", name="save_recipes", value="save_recipes", class="btn btn-success">Save</button>
+				<button type="submit", name="clear_recipes", value="clear_recipes", class="btn btn-success">Clear</button>
+			</div>
+		</div>
+	</form>
+{% endblock %}

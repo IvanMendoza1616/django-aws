@@ -1,0 +1,33 @@
+{% extends "main/base.html" %}
+{% block title %} View Recipe {% endblock %}
+
+{% block content %}
+	<h1>{{ls.name}}</h1>
+	<form method="post", action="#">
+		{% csrf_token %}
+		{% for ingredient in ls.ingredient_set.all %}
+		<div class="input-group mb-3">
+			<input type="text", name="t{{ingredient.id}}",  value="{{ingredient.text}}", class="form-control">
+			<div class="input-group-prepend">
+				<input type="number" value={{ingredient.quantity}} name="q{{ingredient.id}}">
+				<button type="submit", name="delete", value="{{ingredient.id}}", class="btn btn-success">Delete</button>
+			</div>
+		</div>
+		{% endfor %}
+		<p>Preparation</p>
+		{% for preparation in ls.preparation_set.all %}
+			<input type="text", name="{{preparation.id}}",  value="{{preparation.preparation}}", class="form-control">
+		{% endfor %}
+		<br>
+		<p>Type name and quantity of ingredient to add</p>
+		<div class="input-group">
+			<input type="text" name="new_ingredient", placeholder="Ingredient", class="form-control">
+			<input type="number" name="new_quantity", placeholder="Quantity", class="form-control">
+			<button type="submit", name="newIngredient", value="newIngredient", class="btn btn-success">Add Ingredient</button>	
+		</div>
+
+		<br>
+		<button type="submit", name="save_ingredients", value="save_ingredients", class="btn btn-success">Save</button>
+
+	</form>
+{% endblock %}
