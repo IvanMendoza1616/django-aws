@@ -89,7 +89,9 @@ def shoppinglist(response):
 				ql[sl.index(ingredient.text)] += ingredient.quantity
 
 	for i in range(len(sl)):
-		if ql[i] > 0:
+		if (ql[i] % 1 == 0):
+			shoppinglist += str(sl[i]) + " x " + str(int(ql[i])) + "\n"
+		else:
 			shoppinglist += str(sl[i]) + " x " + str(ql[i]) + "\n"
 
 
