@@ -66,7 +66,10 @@ def recipes(response):
 		print(response.POST)
 		if response.POST.get("save_recipes"):
 			for recipe in rl:
-				recipe.quantity = response.POST.get(str(recipe.id))
+				if (response.POST.get(str(recipe.id)) == ""):
+					recipe.quantity = 0
+				else:
+					recipe.quantity = response.POST.get(str(recipe.id))
 				recipe.save()
 		elif response.POST.get("clear_recipes"):
 			for recipe in rl:

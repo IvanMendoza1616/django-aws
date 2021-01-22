@@ -26,6 +26,7 @@ class Ingredient(models.Model):
 	recipe = models.ForeignKey(Recipe, on_delete = models.CASCADE)
 	text = models.CharField(max_length = 300)
 	quantity = models.FloatField()
+	section = models.CharField(max_length = 300)
 
 	def __str__(self):
 		return self.text

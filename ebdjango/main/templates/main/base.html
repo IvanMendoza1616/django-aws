@@ -90,15 +90,17 @@
 			<a class="navbar-brand" href="/shoppinglist">List</a>
 
 		</nav>
-	
-
+		
+		<br>
+		{% block content %}
+		{% endblock %}
 	
 		<div id = "content", name = "content", class="main">
 			<div class="row justify-content-center">
 				<div class="col-8">
 					<br>
-					{% block content %}
-					{% endblock %}
+					
+
 				</div>
 			</div>
 		</div>
