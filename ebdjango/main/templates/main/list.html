@@ -13,6 +13,14 @@
 			<div class="input-group-prepend">
 				<input type="text", name="t{{ingredient.id}}",  value="{{ingredient.text}}", class="form-control">
 				<input type="number" value={{ingredient.quantity|floatformat:"-1"}} name="q{{ingredient.id}}", class="form-control", min="0", step="0.1">
+				<select name="s{{ingredient.id}}", value="{{ingredient.section}}">
+					<option value="{{ingredient.section}}">{{ingredient.section}}</option>
+					<option value="Frutería">Frutería</option>
+					<option value="Panadería">Panadería</option>
+					<option value="Carnicería">Carnicería</option>
+					<option value="Embutidos">Embutidos</option>
+					<option value="Cremería">Cremería</option>
+				</select>
 				<button type="submit", name="delete", value="{{ingredient.id}}", class="btn btn-success"><i class="fa fa-trash"></i></button>
 			</div>
 		</div>
