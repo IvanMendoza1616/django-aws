@@ -7,6 +7,9 @@
 	<div class="text-justify">
 		<p><b>These are the current ingredients for your recipes selected.</b></p>
 	</div>
+	<button class="btn btn-success", onclick="CopyList()">Copy to clipboard</button>
 	<br>
-	{{shoppinglist|linebreaks}}
+	<br>
+	<textarea rows="10" class="form-control" id="myList">{{shoppinglist}}</textarea>
+	<!-- {{shoppinglist|linebreaks}}-->
 {% endblock %}

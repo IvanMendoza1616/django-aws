@@ -21,7 +21,7 @@
 		<br>
 		<p><b>Preparation:</b></p>
 		{% for preparation in ls.preparation_set.all %}
-			<input type="text", name="{{preparation.id}}",  value="{{preparation.preparation}}", class="form-control">
+			<textarea rows="4" name="{{preparation.id}}", class="form-control">{{preparation.preparation}}</textarea>
 		{% endfor %}
 		<br>
 		<br>

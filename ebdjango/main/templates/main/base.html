@@ -52,6 +52,24 @@
 
 	</style>
 
+	<script type="text/javascript">
+		function CopyList() {
+	  		/* Get the text field */
+	  		var copyText = document.getElementById("myList");
+
+	  		/* Select the text field */
+	  		copyText.select();
+	  		copyText.setSelectionRange(0, 99999); /* For mobile devices */
+
+	  		/* Copy the text inside the text field */
+			document.execCommand("copy");
+
+	  		/* Alert the copied text */
+	  		alert("List copied to clipboard");
+		}
+	</script>
+
+
 	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
