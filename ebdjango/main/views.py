@@ -107,3 +107,18 @@ def shoppinglist(response):
 
 
 	return render(response, "main/shoppinglist.html", {"shoppinglist":shoppinglist})
+
+
+def delete(response):
+	#rl = Recipe.objects.all()				#Display by id order
+	rl = Recipe.objects.order_by('name')	#Display in alphabetical order
+
+	if response.method == "POST":
+		print(response.POST)
+
+		if response.POST.get("delete"):
+			n = response.POST.get("delete")
+			d = rl.get(id = n)
+			d.delete()
+
+	return render(response, "main/delete.html", {"rl":rl})

@@ -1,0 +1,30 @@
+{% extends "main/base.html" %}
+{% block title %} View Recipes {% endblock %}
+
+{% block content %}
+	<h1>Recipes</h1>
+	<br>
+	<div class="text-justify">
+		<p><b>Select the number of people eating from each recipe and click Save. The shopping list will then be generated.</b></p>
+	</div>
+	<br>
+	<form method="post", action="#">
+	{% csrf_token %}
+		{% for recipe in rl %}
+			<div class="row">
+				<div class="col">
+					<div class="recipes">
+						<a href="/{{recipe.id}}">{{recipe.name}}</a>
+					</div>
+				</div>
+				<div class="col-4">
+					<button type="submit", name="delete", value="{{recipe.id}}", class="btn btn-success"><i class="fa fa-trash"></i></button>
+				</div>
+			</div>
+			<hr>
+		{% endfor %}
+
+		<br>
+		
+	</form>
+{% endblock %}

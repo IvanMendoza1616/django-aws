@@ -7,4 +7,5 @@ path("", views.home, name = "home"),
 path("create/", views.create, name = "create"),
 path("recipes/", views.recipes, name = "recipes"),
 path("shoppinglist/", views.shoppinglist, name = "shoppinglist"),
+path("delete/", views.delete, name = "delete"),
 ]
