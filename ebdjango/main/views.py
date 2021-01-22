@@ -87,11 +87,11 @@ def shoppinglist(response):
 	rl = Recipe.objects.order_by('name').exclude(quantity=0)
 	for recipe in rl:
 		for ingredient in recipe.ingredient_set.all():
-			if ingredient.text not in sl:
+			if (ingredient.section + "#" + ingredient.text) not in sl:
 				sl.append(ingredient.section + "#" + ingredient.text)
 				ql.append(ingredient.quantity*recipe.quantity)
 			else:
-				ql[sl.index(ingredient.text)] += ingredient.quantity
+				ql[sl.index(ingredient.section + "#" + ingredient.text)] += ingredient.quantity
 
 	for i in range(len(sl)):
 		if (ql[i] % 1 == 0):
