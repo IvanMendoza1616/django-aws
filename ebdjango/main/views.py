@@ -61,7 +61,7 @@ def create(response):
 
 def recipes(response):
 	#rl = Recipe.objects.all()				#Display by id order
-	rl = Recipe.objects.order_by('meal')	#Display in alphabetical order
+	rl = Recipe.objects.order_by('-meal')	#Display in alphabetical order
 
 	if response.method == "POST":
 		print(response.POST)
