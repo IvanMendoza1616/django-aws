@@ -18,6 +18,7 @@ class Item(models.Model):
 class Recipe(models.Model):
 	name = models.CharField(max_length = 200)
 	quantity = models.IntegerField()
+	meal = models.CharField(max_length = 200)
 
 	def __str__(self):
 		return self.name

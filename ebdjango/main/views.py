@@ -61,16 +61,18 @@ def create(response):
 
 def recipes(response):
 	#rl = Recipe.objects.all()				#Display by id order
-	rl = Recipe.objects.order_by('name')	#Display in alphabetical order
+	rl = Recipe.objects.order_by('meal')	#Display in alphabetical order
 
 	if response.method == "POST":
 		print(response.POST)
 		if response.POST.get("save_recipes"):
 			for recipe in rl:
-				if (response.POST.get(str(recipe.id)) == ""):
+				if (response.POST.get("q" + str(recipe.id)) == ""):
 					recipe.quantity = 0
+					recipe.meal = response.POST.get("m" + str(recipe.id))
 				else:
-					recipe.quantity = response.POST.get(str(recipe.id))
+					recipe.quantity = response.POST.get("q" + str(recipe.id))
+					recipe.meal = response.POST.get("m" + str(recipe.id))
 				recipe.save()
 		elif response.POST.get("clear_recipes"):
 			for recipe in rl:

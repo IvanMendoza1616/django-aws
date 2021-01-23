@@ -18,7 +18,12 @@
 					</div>
 				</div>
 				<div class="col-4">
-					<input type="number" value={{recipe.quantity}} name="{{recipe.id}}", class="form-control", min="0">
+					<input type="number" value={{recipe.quantity}} name="q{{recipe.id}}", class="form-control", min="0">
+					<select name="m{{recipe.id}}", value="{{recipe.meal}}">
+						<option value="{{recipe.meal}}">{{recipe.meal}}</option>
+						<option value="Desayuno">Desayuno</option>
+						<option value="Comida">Comida</option>
+					</select>
 				</div>
 			</div>
 			<hr>
