@@ -25,9 +25,12 @@ def index(response, id):
 
 		elif response.POST.get("newIngredient"):
 			txt = response.POST.get("new_ingredient")
-			quantity = response.POST.get("new_quantity")
+			if response.POST.get("new_quantity") == "":
+				quantity = 0
+			else:
+				quantity = response.POST.get("new_quantity")
 
-			if len(txt) > 2:
+			if len(txt) > 1:
 				ls.ingredient_set.create(text=txt, quantity=quantity)
 			else:
 				print("Invalid input")
